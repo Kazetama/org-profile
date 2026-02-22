@@ -1,6 +1,5 @@
 import { Link, usePage } from '@inertiajs/react'
-import { Activity, LayoutGrid, Database } from 'lucide-react'
-
+import { LayoutGrid } from 'lucide-react'
 import { NavMain } from '@/components/nav-main'
 import { NavUser } from '@/components/nav-user'
 
