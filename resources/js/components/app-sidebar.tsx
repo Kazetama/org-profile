@@ -1,5 +1,5 @@
 import { Link, usePage } from '@inertiajs/react'
-import { LayoutGrid } from 'lucide-react'
+import { Activity, LayoutGrid } from 'lucide-react'
 import { NavMain } from '@/components/nav-main'
 import { NavUser } from '@/components/nav-user'
 
@@ -52,7 +52,15 @@ const mainNavItems: NavItem[] = [
         href: ketua.dashboard().url,
         icon: LayoutGrid,
         usertype: ['ketua'],
+    },
+
+    {
+        title: 'Manajemen Anggota',
+        href: '/ketua/members',
+        icon: Activity,
+        usertype: ['ketua'],
     }
+
 ]
 
 export function AppSidebar() {

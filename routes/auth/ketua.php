@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MemberController;
 use Inertia\Inertia;
 
 Route::middleware(['auth', 'redirect.usertype', 'ketua'])
@@ -10,4 +11,7 @@ Route::middleware(['auth', 'redirect.usertype', 'ketua'])
         Route::get('/dashboard', fn () =>
             Inertia::render('ketua/dashboard')
         )->name('dashboard');
+
+        // Resource route untuk CRUD members
+        Route::resource('members', MemberController::class);
     });
