@@ -1,5 +1,5 @@
 import { Head, useForm } from '@inertiajs/react';
-import MemberForm from '@/components/MemberForm';
+import MemberForm from '@/components/member-form';
 import AppLayout from '@/layouts/app-layout';
 import type { Member, BreadcrumbItem } from '@/types';
 
@@ -31,7 +31,7 @@ export default function Edit({ member }: Props) {
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title={`Edit Member - ${member.full_name}`} />
 
-            <div className="max-w-4xl mx-auto p-6">
+            <div className="p-6">
                 <MemberForm
                     title={`Edit Profil: ${member.full_name}`}
                     data={data}
