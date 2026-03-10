@@ -1,5 +1,3 @@
-import React from "react";
-import { Link } from "@inertiajs/react";
 import { motion } from "framer-motion";
 import { ArrowRight, Code2, Sparkles, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";

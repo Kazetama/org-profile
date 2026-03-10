@@ -1,8 +1,6 @@
-import { Head, Link } from '@inertiajs/react';
-import Navbar from '@/components/organism/navbar'; // Pastikan path file Navbar.tsx sudah benar
-import Hero from '@/components/organism/hero'; // Pastikan path file Hero.tsx sudah benar
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Shield, Layout } from 'lucide-react';
+import { Head } from '@inertiajs/react';
+import Hero from '@/components/organism/hero';
+import Navbar from '@/components/organism/navbar';
 
 export default function Welcome() {
     return (
