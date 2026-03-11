@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\BlogController;
 use Laravel\Fortify\Features;
 
 Route::get('/', function () {
@@ -9,6 +10,9 @@ Route::get('/', function () {
         'canRegister' => Features::enabled(Features::registration()),
     ]);
 })->name('home');
+
+Route::get('/blog', [BlogController::class, 'index']);
+Route::get('/blog/{slug}', [BlogController::class, 'show']);
 
 Route::middleware(['auth', 'verified', 'user'])
     ->get('/dashboard', fn () => Inertia::render('dashboard'))

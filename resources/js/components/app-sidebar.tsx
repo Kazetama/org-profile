@@ -45,6 +45,13 @@ const mainNavItems: NavItem[] = [
         usertype: ['admin'],
     },
 
+    {
+        title: 'Manajemen Post',
+        href: '/admin/posts',
+        icon: LayoutGrid,
+        usertype: ['admin'],
+    },
+
     // superadmin navbar items
     {
         title: 'Superadmin Dashboard',

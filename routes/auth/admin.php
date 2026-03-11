@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProgramController;
+use App\Http\Controllers\Admin\PostController;
 use Inertia\Inertia;
 
 Route::middleware(['auth', 'redirect.usertype', 'admin'])
@@ -15,4 +16,5 @@ Route::middleware(['auth', 'redirect.usertype', 'admin'])
         )->name('dashboard');
 
         Route::resource('/program', ProgramController::class);
+        Route::resource('posts', PostController::class);
     });
