@@ -46,10 +46,33 @@ const mainNavItems: NavItem[] = [
     },
 
     {
-        title: 'Manajemen Post',
-        href: '/admin/posts',
+        title: 'Manajemen Blog',
         icon: LayoutGrid,
         usertype: ['admin'],
+        items: [
+            {
+                title: 'Manajemen Post',
+                href: '/admin/posts',
+                usertype: ['admin'],
+            },
+            {
+                title: 'Manajemen Kategori',
+                href: '/admin/categories',
+                usertype: ['admin'],
+            },
+            {
+                title: 'Manajemen Tag',
+                href: '/admin/tags',
+                usertype: ['admin'],
+            },
+        ],
+    },
+
+    {
+        title: 'Lihat Blog',
+        href: '/blog',
+        icon: LayoutGrid,
+        usertype: ['user', 'admin', 'ketua', 'superadmin'],
     },
 
     // superadmin navbar items

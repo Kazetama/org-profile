@@ -87,6 +87,8 @@ class ProgramController extends Controller
                 Storage::disk('public')->delete($program->image);
             }
             $data['image'] = $request->file('image')->store('programs', 'public');
+        } else {
+            unset($data['image']);
         }
 
         $program->update($data);
