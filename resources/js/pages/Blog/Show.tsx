@@ -1,7 +1,7 @@
 import { Head, Link } from '@inertiajs/react'
 import { Calendar, User, Eye, ArrowLeft, Tag as TagIcon, LayoutGrid } from 'lucide-react'
-import AppLayout from '@/layouts/app-layout'
 import { Badge } from '@/components/ui/badge'
+import AppLayout from '@/layouts/app-layout'
 
 // Import Quill CSS for generic styling of content
 import 'react-quill/dist/quill.snow.css'

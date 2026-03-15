@@ -1,7 +1,6 @@
 import { useForm } from '@inertiajs/react'
 import { Save, ArrowLeft, Image as ImageIcon } from 'lucide-react'
 import type { FormEvent, ChangeEvent } from 'react'
-import { useState } from 'react'
 import ReactQuill from 'react-quill-new'
 import 'react-quill-new/dist/quill.snow.css'
 
@@ -9,7 +8,6 @@ import { Button } from '@/components/ui/button'
 import {
     Card,
     CardContent,
-    CardDescription,
     CardHeader,
     CardTitle,
 } from '@/components/ui/card'

@@ -1,7 +1,7 @@
 import { Head, Link } from '@inertiajs/react'
-import { Calendar, User, Eye, ArrowRight, Tag } from 'lucide-react'
-import AppLayout from '@/layouts/app-layout'
+import { Calendar, User, Eye, ArrowRight } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
+import AppLayout from '@/layouts/app-layout'
 
 interface Post {
     id: number

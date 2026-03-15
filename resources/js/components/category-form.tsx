@@ -1,6 +1,6 @@
 import { useForm } from '@inertiajs/react'
 import { Save, ArrowLeft } from 'lucide-react'
-import type { FormEvent, ChangeEvent } from 'react'
+import type { FormEvent } from 'react'
 import { Button } from '@/components/ui/button'
 import {
     Card,

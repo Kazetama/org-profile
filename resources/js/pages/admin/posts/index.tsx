@@ -1,5 +1,5 @@
 import { Head, Link, router } from '@inertiajs/react'
-import { Plus, Pencil, Trash2, Eye, MoreHorizontal, Inbox, CheckCircle2 } from 'lucide-react'
+import { Plus, Pencil, Trash2, MoreHorizontal, Inbox } from 'lucide-react'
 import { useState } from 'react'
 
 import {
