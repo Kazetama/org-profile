@@ -1,15 +1,18 @@
 import { Head } from '@inertiajs/react';
 import Hero from '@/components/organism/hero';
-import Navbar from '@/components/organism/navbar';
+import PublicLayout from '@/layouts/public-layout';
+import MissionSection from '@/components/organism/mission-section';
+import FeaturesSection from '@/components/organism/features-section';
 
 export default function Welcome() {
     return (
-        <div className="min-h-screen bg-background">
+        <PublicLayout>
             <Head title="Welcome to Informatics Core" />
 
-            <Navbar />
             <Hero />
+            <MissionSection />
+            <FeaturesSection />
 
-        </div>
+        </PublicLayout>
     );
 }

@@ -1,7 +1,7 @@
 import { Head, Link } from '@inertiajs/react'
 import { Calendar, User, Eye, ArrowRight } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
-import AppLayout from '@/layouts/app-layout'
+import PublicLayout from '@/layouts/public-layout'
 
 interface Post {
     id: number
@@ -32,7 +32,7 @@ export default function Index({ posts }: Props) {
     const postsData = Array.isArray(posts) ? posts : posts.data
 
     return (
-        <AppLayout>
+        <PublicLayout>
             <Head title="Blog" />
 
             <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -51,7 +51,7 @@ export default function Index({ posts }: Props) {
                     {postsData.map((post) => (
                         <div key={post.id} className="flex flex-col bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300">
                             {/* Thumbnail */}
-                            <Link href={`/blog/${post.slug}`} className="block relative aspect-video overflow-hidden bg-gray-100">
+                            <Link href={`/artikel/${post.slug}`} className="block relative aspect-video overflow-hidden bg-gray-100">
                                 {post.thumbnail ? (
                                     <img
                                         src={`/storage/${post.thumbnail}`}
@@ -83,7 +83,7 @@ export default function Index({ posts }: Props) {
                                     </span>
                                 </div>
 
-                                <Link href={`/blog/${post.slug}`} className="block group">
+                                <Link href={`/artikel/${post.slug}`} className="block group">
                                     <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
                                         {post.title}
                                     </h3>
@@ -101,7 +101,7 @@ export default function Index({ posts }: Props) {
                                             {post.author?.name || 'Admin'}
                                         </span>
                                     </div>
-                                    <Link href={`/blog/${post.slug}`} className="text-sm font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1 group">
+                                    <Link href={`/artikel/${post.slug}`} className="text-sm font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1 group">
                                         Baca <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                     </Link>
                                 </div>
@@ -145,6 +145,6 @@ export default function Index({ posts }: Props) {
                     </div>
                 )}
             </div>
-        </AppLayout>
+        </PublicLayout>
     )
 }

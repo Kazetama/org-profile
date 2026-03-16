@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import type { Event, PaginatedData } from '@/types'
+import PublicLayout from '@/layouts/public-layout'
 
 interface Props {
     events: PaginatedData<Event>
@@ -21,7 +22,8 @@ export default function Index({ events }: Props) {
     )
 
     return (
-        <div className="min-h-screen bg-gray-50/50 py-12 px-6 lg:px-12">
+        <PublicLayout>
+            <div className="bg-gray-50/50 py-12 px-6 lg:px-12">
             <Head title="Browse Events" />
 
             <div className="max-w-7xl mx-auto space-y-12">
@@ -101,6 +103,7 @@ export default function Index({ events }: Props) {
                     </div>
                 )}
             </div>
-        </div>
+            </div>
+        </PublicLayout>
     )
 }

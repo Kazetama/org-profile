@@ -70,7 +70,7 @@ const mainNavItems: NavItem[] = [
 
     {
         title: 'Lihat Blog',
-        href: '/blog',
+        href: '/artikel',
         icon: LayoutGrid,
         usertype: ['user', 'admin', 'ketua', 'superadmin'],
     },

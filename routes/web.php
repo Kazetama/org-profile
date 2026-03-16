@@ -11,8 +11,10 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
-Route::get('/blog', [BlogController::class, 'index']);
-Route::get('/blog/{slug}', [BlogController::class, 'show']);
+Route::get('/profil', fn () => Inertia::render('Profil'))->name('profil');
+
+Route::get('/artikel', [BlogController::class, 'index'])->name('artikel.index');
+Route::get('/artikel/{slug}', [BlogController::class, 'show'])->name('artikel.show');
 
 Route::get('/event', [App\Http\Controllers\PublicEventController::class, 'index'])->name('event.index');
 Route::get('/event/{slug}', [App\Http\Controllers\PublicEventController::class, 'show'])->name('event.show');

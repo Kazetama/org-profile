@@ -1,7 +1,7 @@
 import { Head, Link } from '@inertiajs/react'
 import { Calendar, User, Eye, ArrowLeft, Tag as TagIcon, LayoutGrid } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
-import AppLayout from '@/layouts/app-layout'
+import PublicLayout from '@/layouts/public-layout'
 
 // Import Quill CSS for generic styling of content
 import 'react-quill-new/dist/quill.snow.css'
@@ -34,7 +34,7 @@ export default function Show({ post }: Props) {
     const keywords = post.keywords || `${post.category?.name || 'Blog'}, Artikel, Bacaan`
 
     return (
-        <AppLayout>
+        <PublicLayout>
             <Head>
                 <title>{metaTitle}</title>
                 <meta name="description" content={metaDesc} />
@@ -50,7 +50,7 @@ export default function Show({ post }: Props) {
             <div className="bg-gray-50 border-b border-gray-200 sticky top-0 z-10">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
                     <Link
-                        href="/blog"
+                        href="/artikel"
                         className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
                     >
                         <ArrowLeft className="w-4 h-4" />
@@ -157,6 +157,6 @@ export default function Show({ post }: Props) {
                      </div>
                 </div>
             </article>
-        </AppLayout>
+        </PublicLayout>
     )
 }

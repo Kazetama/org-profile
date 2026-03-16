@@ -15,9 +15,8 @@ import { cn } from "@/lib/utils";
 const navItems = [
     { name: "Beranda", href: "/" },
     { name: "Profil", href: "/profil" },
-    { name: "Program Kerja", href: "/proker" },
+    { name: "Event", href: "/event" },
     { name: "Artikel", href: "/artikel" },
-    { name: "Kontak", href: "/kontak" },
 ];
 
 export default function Navbar() {

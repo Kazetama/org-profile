@@ -17,6 +17,7 @@ import {
 } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
 import type { Event, RegistrationField } from '@/types/event'
+import PublicLayout from '@/layouts/public-layout'
 
 interface Props {
     event: Event
@@ -139,7 +140,7 @@ export default function Show({ event }: Props) {
     }
 
     return (
-        <div className="min-h-screen bg-white">
+        <PublicLayout>
             <Head title={event.name} />
             
             {/* Header Banner */}
@@ -321,6 +322,6 @@ export default function Show({ event }: Props) {
                     </div>
                 </div>
             </div>
-        </div>
+        </PublicLayout>
     )
 }
