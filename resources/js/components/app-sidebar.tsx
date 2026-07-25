@@ -1,5 +1,5 @@
 import { Link, usePage } from '@inertiajs/react'
-import { Activity, LayoutGrid, UserPlus } from 'lucide-react'
+import { Activity, LayoutGrid, UserPlus, Users } from 'lucide-react'
 import { NavMain } from '@/components/nav-main'
 import { NavUser } from '@/components/nav-user'
 
@@ -73,6 +73,13 @@ const mainNavItems: NavItem[] = [
         title: 'Superadmin Dashboard',
         href: superAdmin.dashboard().url,
         icon: LayoutGrid,
+        usertype: ['super-admin'],
+    },
+
+    {
+        title: 'Manajemen Koor',
+        href: '/super-admin/users',
+        icon: Users,
         usertype: ['super-admin'],
     },
 
