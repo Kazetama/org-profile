@@ -48,7 +48,7 @@ export default function MissionSection() {
                             <span className="text-blue-600">Masa Depan Teknologi</span> yang Lebih Baik.
                         </h2>
                         <p className="text-slate-500 mb-8 leading-relaxed max-w-lg">
-                            Biro Teknik Informatika berkomitmen untuk menjadi garda terdepan dalam inovasi teknologi tingkat mahasiswa, menciptakan ekosistem yang kolaboratif dan progresif.
+                            Himpunan Teknik Informatika berkomitmen untuk menjadi garda terdepan dalam inovasi teknologi tingkat mahasiswa, menciptakan ekosistem yang kolaboratif dan progresif.
                         </p>
                         <div className="flex items-center gap-4 text-sm font-bold text-slate-900">
                             <div className="flex -space-x-3">

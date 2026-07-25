@@ -1,6 +1,6 @@
 import { Link, usePage } from "@inertiajs/react";
 import { motion } from "framer-motion";
-import { Menu, Code2, ChevronRight, LayoutDashboard } from "lucide-react";
+import { Menu, ChevronRight, LayoutDashboard, Code2 } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button"; // Pastikan path ke komponen shadcn benar
 import {
@@ -21,7 +21,9 @@ const navItems = [
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
-    const { url } = usePage();
+    const { url, props } = usePage<{ auth?: { user?: { usertype?: string } } }>();
+    const auth = props.auth;
+    const portalHref = auth?.user ? "/dashboard" : "/login";
 
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -42,12 +44,10 @@ export default function Navbar() {
 
                 {/* Logo Section */}
                 <Link href="/" className="flex items-center gap-3 group shrink-0">
-                    <div className="bg-gradient-to-tr from-blue-600 to-indigo-600 p-2 rounded-xl shadow-blue-200 shadow-lg transition-transform group-hover:rotate-3">
-                        <Code2 className="w-5 h-5 text-white" />
-                    </div>
+                    <img src="/logo hmti baru.png" alt="HMTI Logo" className="w-10 h-10 object-contain transition-transform group-hover:rotate-3" />
                     <div className="flex flex-col leading-none">
                         <span className="font-bold text-lg tracking-tight text-slate-900">
-                            Biro Teknik Informatika
+                            Himpunan Teknik Informatika
                         </span>
                         <span className="text-[10px] uppercase tracking-[0.2em] text-blue-600 font-semibold">
                             Official Website
@@ -83,9 +83,11 @@ export default function Navbar() {
                         );
                     })}
                     <div className="ml-4 pl-4 border-l border-slate-200">
-                        <Button className="rounded-full bg-slate-900 hover:bg-blue-600 text-white gap-2 transition-all active:scale-95">
-                            <LayoutDashboard className="w-4 h-4" />
-                            Portal
+                        <Button asChild className="rounded-full bg-slate-900 hover:bg-blue-600 text-white gap-2 transition-all active:scale-95 cursor-pointer">
+                            <Link href={portalHref}>
+                                <LayoutDashboard className="w-4 h-4" />
+                                Portal
+                            </Link>
                         </Button>
                     </div>
                 </div>
@@ -145,11 +147,13 @@ export default function Navbar() {
 
                             {/* Mobile Footer (Button) */}
                             <div className="p-6 border-t border-slate-50">
-                                <Button className="w-full bg-slate-900 hover:bg-blue-600 h-14 rounded-2xl shadow-xl shadow-slate-200 text-white font-bold transition-all active:scale-[0.97]">
-                                    Masuk Portal
+                                <Button asChild className="w-full bg-slate-900 hover:bg-blue-600 h-14 rounded-2xl shadow-xl shadow-slate-200 text-white font-bold transition-all active:scale-[0.97] cursor-pointer">
+                                    <Link href={portalHref}>
+                                        Masuk Portal
+                                    </Link>
                                 </Button>
                                 <p className="text-center text-[10px] text-slate-400 mt-4 uppercase tracking-[0.2em]">
-                                    Biro Teknik Informatika © 2026
+                                    Himpunan Teknik Informatika © 2026
                                 </p>
                             </div>
                         </SheetContent>

@@ -6,8 +6,8 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
-import type { Event, PaginatedData } from '@/types'
 import PublicLayout from '@/layouts/public-layout'
+import type { Event, PaginatedData } from '@/types'
 
 interface Props {
     events: PaginatedData<Event>

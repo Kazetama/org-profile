@@ -16,8 +16,8 @@ import {
     SelectValue,
 } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
-import type { Event, RegistrationField } from '@/types/event'
 import PublicLayout from '@/layouts/public-layout'
+import type { Event, RegistrationField } from '@/types/event'
 
 interface Props {
     event: Event

@@ -17,10 +17,10 @@ class RedirectUsertype
         }
 
         $dashboards = [
-            'superadmin' => 'superadmin.dashboard',
-            'admin' => 'admin.dashboard',
-            'ketua' => 'ketua.dashboard',
-            'user' => 'dashboard',
+            'super-admin' => 'super-admin.dashboard',
+            'admin-publika' => 'admin-publika.dashboard',
+            'admin-psdm' => 'admin-psdm.dashboard',
+            'member' => 'dashboard',
         ];
 
         $usertype = $user->usertype;
@@ -31,14 +31,14 @@ class RedirectUsertype
 
         $targetRoute = $dashboards[$usertype];
 
-        if ($usertype === 'superadmin') {
+        if ($usertype === 'super-admin') {
             return $next($request);
         }
 
         $restrictedPaths = match ($usertype) {
-            'admin' => ['superadmin/*', 'ketua/*', 'dosen/*'],
-            'ketua' => ['admin/*', 'superadmin/*', 'dosen/*'],
-            'user' => ['admin/*', 'superadmin/*', 'ketua/*'],
+            'admin-publika' => ['super-admin/*', 'admin-psdm/*'],
+            'admin-psdm' => ['admin-publika/*', 'super-admin/*'],
+            'member' => ['admin-publika/*', 'super-admin/*', 'admin-psdm/*'],
             default => [],
         };
 

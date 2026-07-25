@@ -44,7 +44,7 @@ export default function Profil() {
 
     return (
         <PublicLayout>
-            <Head title="Profil - Biro Teknik Informatika" />
+            <Head title="Profil - Himpunan Teknik Informatika" />
 
             {/* Hero Section */}
             <section className="relative py-20 overflow-hidden bg-slate-900 border-b border-white/5">
@@ -55,7 +55,7 @@ export default function Profil() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h1 className="text-4xl lg:text-6xl font-extrabold text-white mb-6">Mengenal Lebih Dekat <br />Biro Teknik Informatika</h1>
+                        <h1 className="text-4xl lg:text-6xl font-extrabold text-white mb-6">Mengenal Lebih Dekat <br />Himpunan Teknik Informatika</h1>
                         <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
                             Dedikasi kami untuk membangun generasi teknologi unggul, kolaboratif, dan inovatif di lingkungan akademik dan industri.
                         </p>
@@ -98,7 +98,7 @@ export default function Profil() {
                         </div>
                         <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 leading-tight">Berawal dari Visi, <br />Tumbuh dengan Karya.</h2>
                         <p className="text-slate-600 leading-relaxed mb-6">
-                            Biro Teknik Informatika didirikan dengan tujuan menjadi wadah integrasi bagi seluruh mahasiswa informatika untuk meningkatkan kompetensi teknis dan soft skills mereka.
+                            Himpunan Teknik Informatika didirikan dengan tujuan menjadi wadah integrasi bagi seluruh mahasiswa informatika untuk meningkatkan kompetensi teknis dan soft skills mereka.
                         </p>
                         <p className="text-slate-600 leading-relaxed">
                             Selama bertahun-tahun, kami telah bertransformasi dari sebuah kelompok belajar kecil menjadi organisasi yang solid dengan berbagai divisi spesialisasi, mengelola proyek nyata, dan menyelenggarakan event teknologi bergengsi.

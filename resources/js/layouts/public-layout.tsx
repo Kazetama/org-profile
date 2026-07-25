@@ -1,6 +1,6 @@
-import Navbar from "@/components/organism/navbar";
+import type { ReactNode } from "react";
 import Footer from "@/components/organism/footer";
-import { ReactNode } from "react";
+import Navbar from "@/components/organism/navbar";
 
 interface PublicLayoutProps {
     children: ReactNode;

@@ -22,10 +22,10 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
 
         $middleware->alias([
-            'superadmin'        => \App\Http\Middleware\SuperadminMiddleware::class,
-            'admin'             => \App\Http\Middleware\AdminMiddleware::class,
-            'ketua'             => \App\Http\Middleware\KetuaMiddleware::class,
-            'user'              => \App\Http\Middleware\UserMiddleware::class,
+            'super-admin'       => \App\Http\Middleware\SuperAdminMiddleware::class,
+            'admin-publika'     => \App\Http\Middleware\AdminPublikaMiddleware::class,
+            'admin-psdm'        => \App\Http\Middleware\AdminPsdmMiddleware::class,
+            'member'            => \App\Http\Middleware\MemberMiddleware::class,
             'redirect.usertype' => \App\Http\Middleware\RedirectUsertype::class,
         ]);
     })

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
     return (
-        <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-white">
+        <section className="relative min-h-[10vh] flex items-center pt-20 overflow-hidden bg-white">
             {/* Background Decorative Elements */}
             <div className="absolute top-40 -left-20 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob" />
             <div className="absolute top-20 right-0 w-96 h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000" />
@@ -71,7 +71,7 @@ const Hero = () => {
                     <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-[8px] border-white ring-1 ring-slate-200/50">
                         <img
                             src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop"
-                            alt="Biro Teknik Informatika Activity"
+                            alt="Himpunan Teknik Informatika Activity"
                             className="w-full aspect-[16/10] object-cover transition-transform duration-700 hover:scale-105"
                         />
                     </div>

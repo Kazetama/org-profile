@@ -26,24 +26,24 @@ class User extends Authenticatable
         'usertype',
     ];
 
-    public function isSuperadmin(): bool
+    public function isSuperAdmin(): bool
     {
-        return $this->usertype === 'superadmin';
+        return $this->usertype === 'super-admin';
     }
 
-    public function isKetua(): bool
+    public function isAdminPsdm(): bool
     {
-        return $this->usertype === 'ketua';
+        return $this->usertype === 'admin-psdm';
     }
 
-    public function isAdmin(): bool
+    public function isAdminPublika(): bool
     {
-        return $this->usertype === 'admin';
+        return $this->usertype === 'admin-publika';
     }
 
-    public function isUser(): bool
+    public function isMember(): bool
     {
-        return $this->usertype === 'user';
+        return $this->usertype === 'member';
     }
 
     /**

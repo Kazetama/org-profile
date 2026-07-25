@@ -1,5 +1,5 @@
 import { Link } from "@inertiajs/react";
-import { Code2, Github, Instagram, Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react";
+import { Github, Instagram, Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -11,15 +11,13 @@ export default function Footer() {
                     {/* Brand Section */}
                     <div className="space-y-6">
                         <Link href="/" className="flex items-center gap-3 group">
-                            <div className="bg-gradient-to-tr from-blue-600 to-indigo-600 p-2 rounded-xl shadow-blue-200 shadow-lg">
-                                <Code2 className="w-5 h-5 text-white" />
-                            </div>
+                            <img src="/logo hmti baru.png" alt="HMTI Logo" className="w-10 h-10 object-contain" />
                             <span className="font-bold text-xl tracking-tight text-slate-900">
-                                Biro Teknik Informatika
+                                Himpunan Teknik Informatika
                             </span>
                         </Link>
                         <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
-                            Platform informasi dan edukasi resmi Biro Teknik Informatika untuk seluruh mahasiswa dan civitas akademik.
+                            Platform informasi dan edukasi resmi Himpunan Teknik Informatika untuk seluruh mahasiswa dan civitas akademik.
                         </p>
                         <div className="flex items-center gap-4">
                             {[
@@ -122,7 +120,7 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-slate-400 text-[10px] uppercase tracking-[0.2em] font-semibold">
-                        Biro Teknik Informatika © {currentYear} • All Rights Reserved
+                        Himpunan Teknik Informatika © {currentYear} • All Rights Reserved
                     </p>
                     <div className="flex items-center gap-6">
                         <Link href="/login" className="text-slate-400 hover:text-slate-900 text-[10px] uppercase tracking-[0.2em] font-semibold transition-colors">

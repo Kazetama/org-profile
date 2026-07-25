@@ -1,8 +1,8 @@
 import { Head } from '@inertiajs/react';
-import Hero from '@/components/organism/hero';
-import PublicLayout from '@/layouts/public-layout';
-import MissionSection from '@/components/organism/mission-section';
 import FeaturesSection from '@/components/organism/features-section';
+import Hero from '@/components/organism/hero';
+import MissionSection from '@/components/organism/mission-section';
+import PublicLayout from '@/layouts/public-layout';
 
 export default function Welcome() {
     return (

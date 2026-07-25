@@ -21,23 +21,21 @@ class DashboardTest extends TestCase
 
     /**
      * Test: User biasa mengakses dashboard umum.
-     * (Sesuai web.php kamu yang punya middleware 'user' di route 'dashboard')
      */
     public function test_regular_user_can_access_dashboard(): void
     {
-        $user = User::factory()->create(['usertype' => 'user']);
+        $user = User::factory()->create(['usertype' => 'member']);
         $response = $this->actingAs($user)->get(route('dashboard'));
         $response->assertStatus(200);
     }
 
     /**
      * Test: Admin mengakses dashboard admin.
-     * Diasumsikan ada route 'admin.dashboard' di dalam auth/admin.php
      */
     public function test_admin_can_access_dashboard(): void
     {
-        $user = User::factory()->create(['usertype' => 'admin']);
-        $response = $this->actingAs($user)->get(route('admin.dashboard'));
+        $user = User::factory()->create(['usertype' => 'admin-publika']);
+        $response = $this->actingAs($user)->get(route('admin-publika.dashboard'));
         $response->assertStatus(200);
     }
 
@@ -46,8 +44,8 @@ class DashboardTest extends TestCase
      */
     public function test_superadmin_can_access_dashboard(): void
     {
-        $user = User::factory()->create(['usertype' => 'superadmin']);
-        $response = $this->actingAs($user)->get(route('superadmin.dashboard'));
+        $user = User::factory()->create(['usertype' => 'super-admin']);
+        $response = $this->actingAs($user)->get(route('super-admin.dashboard'));
         $response->assertStatus(200);
     }
 
@@ -56,8 +54,8 @@ class DashboardTest extends TestCase
      */
     public function test_ketua_can_access_dashboard(): void
     {
-        $user = User::factory()->create(['usertype' => 'ketua']);
-        $response = $this->actingAs($user)->get(route('ketua.dashboard'));
+        $user = User::factory()->create(['usertype' => 'admin-psdm']);
+        $response = $this->actingAs($user)->get(route('admin-psdm.dashboard'));
         $response->assertStatus(200);
     }
 
@@ -67,8 +65,8 @@ class DashboardTest extends TestCase
      */
     public function test_admin_cannot_access_superadmin_dashboard(): void
     {
-        $admin = User::factory()->create(['usertype' => 'admin']);
-        $response = $this->actingAs($admin)->get(route('superadmin.dashboard'));
+        $admin = User::factory()->create(['usertype' => 'admin-publika']);
+        $response = $this->actingAs($admin)->get(route('super-admin.dashboard'));
         $response->assertStatus(302);
     }
 }

@@ -1,8 +1,8 @@
 export type Usertype =
-    | 'user'
-    | 'admin'
-    | 'superadmin'
-    | 'ketua'
+    | 'member'
+    | 'admin-publika'
+    | 'super-admin'
+    | 'admin-psdm'
 
 export type User = {
     id: number;

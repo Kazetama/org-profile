@@ -1,5 +1,5 @@
 import { Link, usePage } from '@inertiajs/react'
-import { Activity, LayoutGrid } from 'lucide-react'
+import { Activity, LayoutGrid, UserPlus } from 'lucide-react'
 import { NavMain } from '@/components/nav-main'
 import { NavUser } from '@/components/nav-user'
 
@@ -14,9 +14,9 @@ import {
 } from '@/components/ui/sidebar'
 
 import { dashboard } from '@/routes'
-import admin from '@/routes/admin'
-import ketua from '@/routes/ketua'
-import superadmin from '@/routes/superadmin'
+import adminPsdm from '@/routes/admin-psdm'
+import adminPublika from '@/routes/admin-publika'
+import superAdmin from '@/routes/super-admin'
 
 import type { NavItem, Usertype } from '@/types'
 import AppLogo from './app-logo'
@@ -25,70 +25,77 @@ const mainNavItems: NavItem[] = [
     // mahasiswa navbar items
     {
         title: 'Dashboard',
-        href: dashboard(),
+        href: dashboard().url,
         icon: LayoutGrid,
-        usertype: ['user'],
+        usertype: ['member'],
     },
 
     // admin navbar items
     {
         title: 'Admin Dashboard',
-        href: admin.dashboard().url,
+        href: adminPublika.dashboard().url,
         icon: LayoutGrid,
-        usertype: ['admin'],
+        usertype: ['admin-publika'],
     },
 
     {
         title: 'Event Organisasi',
-        href: '/admin/event',
+        href: '/admin-publika/event',
         icon: LayoutGrid,
-        usertype: ['admin'],
+        usertype: ['admin-publika'],
     },
 
     {
         title: 'Manajemen Blog',
         icon: LayoutGrid,
-        usertype: ['admin'],
+        usertype: ['admin-publika'],
         items: [
             {
                 title: 'Manajemen Post',
-                href: '/admin/posts',
-                usertype: ['admin'],
+                href: '/admin-publika/posts',
+                usertype: ['admin-publika'],
             },
             {
                 title: 'Manajemen Kategori',
-                href: '/admin/categories',
-                usertype: ['admin'],
+                href: '/admin-publika/categories',
+                usertype: ['admin-publika'],
             },
             {
                 title: 'Manajemen Tag',
-                href: '/admin/tags',
-                usertype: ['admin'],
+                href: '/admin-publika/tags',
+                usertype: ['admin-publika'],
             },
         ],
     },
-    
+
     // superadmin navbar items
     {
         title: 'Superadmin Dashboard',
-        href: superadmin.dashboard().url,
+        href: superAdmin.dashboard().url,
         icon: LayoutGrid,
-        usertype: ['superadmin'],
+        usertype: ['super-admin'],
     },
 
     // ketua navbar items
     {
-        title: 'ketua Dashboard',
-        href: ketua.dashboard().url,
+        title: 'Psdm Dashboard',
+        href: adminPsdm.dashboard().url,
         icon: LayoutGrid,
-        usertype: ['ketua'],
+        usertype: ['admin-psdm'],
     },
 
     {
         title: 'Manajemen Anggota',
-        href: '/ketua/members',
+        href: '/admin-psdm/members',
         icon: Activity,
-        usertype: ['ketua'],
+        usertype: ['admin-psdm'],
+    },
+
+    {
+        title: 'Open Recruitment',
+        href: '/admin-psdm/recruitment',
+        icon: UserPlus,
+        usertype: ['admin-psdm'],
     }
 
 ]
@@ -102,7 +109,7 @@ export function AppSidebar() {
         }
     }
 
-    const usertype: Usertype = auth?.user?.usertype ?? 'user'
+    const usertype: Usertype = auth?.user?.usertype ?? 'member'
 
     const filteredMainNavItems = mainNavItems.filter(
         item => !item.usertype || item.usertype.includes(usertype)
@@ -114,7 +121,7 @@ export function AppSidebar() {
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton size="lg" asChild>
-                            <Link href={dashboard()} prefetch>
+                            <Link href={dashboard().url} prefetch>
                                 <AppLogo />
                             </Link>
                         </SidebarMenuButton>
