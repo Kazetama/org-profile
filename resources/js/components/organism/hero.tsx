@@ -2,7 +2,12 @@ import { motion } from "framer-motion";
 import { ArrowRight, Code2, Sparkles, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const Hero = () => {
+interface HeroProps {
+    activeMembersCount: number;
+    eventsCount: number;
+}
+
+const Hero = ({ activeMembersCount, eventsCount }: HeroProps) => {
     return (
         <section className="relative min-h-[10vh] flex items-center pt-20 overflow-hidden bg-white">
             {/* Background Decorative Elements */}
@@ -49,13 +54,17 @@ const Hero = () => {
                     {/* Quick Stats Micro-interaction */}
                     <div className="mt-12 flex items-center gap-8 border-t border-slate-100 pt-8">
                         <div>
-                            <p className="text-2xl font-bold text-slate-900">50+</p>
+                            <p className="text-2xl font-bold text-slate-900">
+                                {activeMembersCount > 0 ? `${activeMembersCount}+` : '0'}
+                            </p>
                             <p className="text-sm text-slate-500 font-medium">Anggota Aktif</p>
                         </div>
                         <div className="w-px h-8 bg-slate-200" />
                         <div>
-                            <p className="text-2xl font-bold text-slate-900">12+</p>
-                            <p className="text-sm text-slate-500 font-medium">Project Selesai</p>
+                            <p className="text-2xl font-bold text-slate-900">
+                                {eventsCount > 0 ? `${eventsCount}+` : '0'}
+                            </p>
+                            <p className="text-sm text-slate-500 font-medium">Event Terlaksana</p>
                         </div>
                     </div>
                 </motion.div>

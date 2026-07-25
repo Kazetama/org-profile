@@ -4,12 +4,17 @@ import Hero from '@/components/organism/hero';
 import MissionSection from '@/components/organism/mission-section';
 import PublicLayout from '@/layouts/public-layout';
 
-export default function Welcome() {
+interface Props {
+    activeMembersCount: number;
+    eventsCount: number;
+}
+
+export default function Welcome({ activeMembersCount, eventsCount }: Props) {
     return (
         <PublicLayout>
             <Head title="Welcome to Informatics Core" />
 
-            <Hero />
+            <Hero activeMembersCount={activeMembersCount} eventsCount={eventsCount} />
             <MissionSection />
             <FeaturesSection />
 

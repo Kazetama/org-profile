@@ -5,6 +5,7 @@ namespace App\Http\Controllers\SuperAdmin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use Inertia\Inertia;
@@ -82,7 +83,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         // Prevent deleting oneself
-        if (auth()->id() === $user->id) {
+        if (Auth::id() === $user->id) {
             return back()->withErrors(['message' => 'Anda tidak dapat menghapus akun Anda sendiri.']);
         }
 

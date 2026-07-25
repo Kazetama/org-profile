@@ -15,10 +15,22 @@ use App\Http\Controllers\PublicEventController;
 Route::get('/', function () {
     return Inertia::render('welcome', [
         'canRegister' => Features::enabled(Features::registration()),
+        'activeMembersCount' => \App\Models\Member::where('status', 'aktif')->count(),
+        'eventsCount' => \App\Models\Event::count(),
     ]);
 })->name('home');
 
-Route::get('/profil', fn () => Inertia::render('Profil'))->name('profil');
+Route::get('/profil', function () {
+    $awardsCount = \App\Models\Post::whereHas('category', function ($q) {
+        $q->where('slug', 'penghargaan')->orWhere('name', 'like', '%penghargaan%');
+    })->count();
+
+    return Inertia::render('Profil', [
+        'totalMembers' => \App\Models\Member::count(),
+        'totalEvents' => \App\Models\Event::count(),
+        'totalAwards' => $awardsCount,
+    ]);
+})->name('profil');
 
 Route::get('/artikel', [BlogController::class, 'index'])->name('artikel.index');
 Route::get('/artikel/{slug}', [BlogController::class, 'show'])->name('artikel.show');

@@ -3,13 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPsdm\MemberController;
 use App\Http\Controllers\AdminPsdm\RecruitmentController;
+use App\Http\Controllers\AdminPsdm\DashboardController;
 use Inertia\Inertia;
 
 Route::middleware(['auth', 'verified', 'redirect.usertype', 'admin-psdm'])
     ->prefix('admin-psdm')
     ->name('admin-psdm.')
     ->group(function (): void {
-        Route::get('/dashboard', fn () => Inertia::render('admin-psdm/dashboard'))->name('dashboard');
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
         // Members
         Route::get('/members/export', [MemberController::class, 'export'])->name('members.export');

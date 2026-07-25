@@ -1,5 +1,5 @@
 import { Link } from "@inertiajs/react";
-import { Github, Instagram, Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react";
+import { Github, Instagram, Linkedin, Twitter, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -98,20 +98,14 @@ export default function Footer() {
                                     <MapPin className="w-4 h-4" />
                                 </div>
                                 <span className="text-slate-500 text-sm leading-relaxed">
-                                    Jl. Raya Kampus IT, Gedung B Lantai 2, Kota Informatika
+                                    Jl. Penanggungan No.41a, Bandar Lor, Kec. Kota, Kota Kediri, Jawa Timur 64129, Indonesia
                                 </span>
                             </li>
                             <li className="flex items-center gap-3 group">
                                 <div className="p-2 rounded-lg bg-slate-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all">
                                     <Mail className="w-4 h-4" />
                                 </div>
-                                <span className="text-slate-500 text-sm">info@infotek.ac.id</span>
-                            </li>
-                            <li className="flex items-center gap-3 group">
-                                <div className="p-2 rounded-lg bg-slate-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                                    <Phone className="w-4 h-4" />
-                                </div>
-                                <span className="text-slate-500 text-sm">+62 (21) 1234-5678</span>
+                                <span className="text-slate-500 text-sm">biro.ti@kediri.dinus.ac.id</span>
                             </li>
                         </ul>
                     </div>
